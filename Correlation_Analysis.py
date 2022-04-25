@@ -116,6 +116,6 @@ titanic['embarked']=titanic['embarked'].replace('S', 1)
 titanic['embarked']=titanic['embarked'].replace('Q', 2)
 titanic['embarked']
 
-plt.figure(figsize=(10, 10))
+plt.figure(figsize=(10, 10)) 
 sns.heatmap(titanic.corr(), linewidths=0.01, square=True, annot=True, cmap=plt.cm.viridis, linecolor="white")
 plt.title('Correlation between features')
