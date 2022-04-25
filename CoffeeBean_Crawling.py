@@ -50,7 +50,7 @@ for i in range(325, 330): # 테스트를 위해 일부 값만 세팅
         print(i)
 
 
-# In[3]:
+# In[3]: 
 
 
 df_cb = pd.DataFrame({'매장이름':store_name, 'address':store_add_c, 'phone':store_tel})
