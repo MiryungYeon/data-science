@@ -5,3 +5,4 @@ Different ways to handle structured and unstructured data
 * Python
 * Web Crawling
 * Correlation Analysis
+* Frequency Analysis
