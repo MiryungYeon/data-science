@@ -70,5 +70,5 @@ x_features = boston_df.columns
 
 for i, feature in enumerate(x_features):
       row = int(i/3)
-      col = i%3
+      col = i%3 
       sns.regplot(x=feature, y='medv', data=boston_df, ax=axs[row][col])
