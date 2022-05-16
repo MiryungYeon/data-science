@@ -6,3 +6,4 @@ Different ways to handle structured and unstructured data
 * Web Crawling
 * Correlation Analysis
 * Frequency Analysis
+* Regression Analysis
