@@ -7,3 +7,7 @@ Different ways to handle structured and unstructured data
 * Correlation Analysis
 * Frequency Analysis
 * Regression Analysis
+* * *
+## Tools
+* Colab
+* Jupyter Notebook
