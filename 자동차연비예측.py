@@ -57,3 +57,26 @@ Y_test
 mse = mean_squared_error(Y_test, Y_predict)
 
 np.sqrt(mse)
+
+plt.figure(figsize=(10, 10))
+plt.subplot(2, 3, 1)
+sns.regplot(x='cylinders', y='mpg', data=df, color='r')
+plt.subplot(2, 3, 2)
+sns.regplot(x='displacement', y='mpg', data=df, color='g')
+plt.subplot(2, 3, 3)
+sns.regplot(x='horsepower', y='mpg', data=df, color='b')
+plt.subplot(2, 3, 4)
+sns.regplot(x='weight', y='mpg', data=df, color='c')
+plt.subplot(2, 3, 5)
+sns.regplot(x='acceleration', y='mpg', data=df, color='m')
+plt.subplot(2, 3, 6)
+sns.regplot(x='model_year', y='mpg', data=df, color='y')
+
+cylinders_1 = int(input('cylinders : '))
+displacement_1 = int(input('displacement : '))
+horsepower_1 = int(input('horsepower : '))
+weight_1 = int(input('weight : '))
+acceleration_1 = int(input('acceleration : '))
+model_year_1 = int(input('model_year : '))
+
+lr.predict([[cylinders_1, displacement_1, horsepower_1, weight_1, acceleration_1, model_year_1]])
