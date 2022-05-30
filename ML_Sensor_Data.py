@@ -56,7 +56,7 @@ x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.3, random_
 
 y_train
 
-dtc = DecisionTreeClassifier()
+dtc = DecisionTreeClassifier(max_depth=6, random_state=150)
 dtc.fit(x_train, y_train)
 
 Y_predict = dtc.predict(x_test)
@@ -64,3 +64,34 @@ Y_predict = dtc.predict(x_test)
 confusion_matrix(y_test, Y_predict)
 
 accuracy_score(y_test, Y_predict)
+
+dtc.get_params() # max_depth
+
+from sklearn.model_selection import GridSearchCV # Cross Validation 교차 검증
+
+params = { 'max_depth': [n for n in range(5, 30)]}
+
+grid_cv = GridSearchCV(dtc, param_grid = params, scoring = 'accuracy', cv = 5, return_train_score=True)
+
+grid_cv.fit(x_train, y_train)
+
+cv_results_df = pd.DataFrame(grid_cv.cv_results_)
+cv_results_df
+
+cv_results_df[['rank_test_score', 'param_max_depth', 'mean_test_score', 'mean_train_score']]
+
+grid_cv.best_score_, grid_cv.best_params_
+
+from sklearn import tree
+
+plt.figure(figsize=(10, 10))
+tree.plot_tree(dtc)
+plt.show()
+
+import graphviz
+
+dot_data = tree.export_graphviz(dtc, filled=True, rounded = True, feature_names=df.columns[:-1],  class_names=df.columns[-1]) #feature_names=df.columns[:-1],  class_names=df.columns[-1]
+graph = graphviz.Source(dot_data)
+graph.render('test')
+#graph
+
